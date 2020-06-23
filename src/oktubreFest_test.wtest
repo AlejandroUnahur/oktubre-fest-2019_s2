@@ -1,0 +1,17 @@
+import oktubreFest_MarcasYJarras.*
+import oktubrefest_Personas.*
+import oktubreFest_Carpas.*
+
+test "test Personas" 
+{
+
+	const hofbrau = new CervezaRoja(graduacionReglamentaria = 0.08,paisDeOrigen ="Alemania",contenidoLupulo = 1.5)
+	const jarra1 = new Jarra(capacidadLitros = 0.5, marca = hofbrau )
+	const pepe = new Aleman(peso = 80, pais = "Alemania", nivelDeAguante = 30)
+	
+	assert.equals(0.05,jarra1.contenidoDeAlcohol())
+	pepe.comprar(jarra1)
+	assert.that(pepe.estaEbrio())
+	assert.that(pepe.leGusta(hofbrau))
+
+} 
